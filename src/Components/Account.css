@@ -1,0 +1,41 @@
+h1 {
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+}
+
+.accountIconsContainer {
+    display: flex;
+    justify-content: center;
+    padding: 5vh;
+}
+
+img {
+    height: 18vh;
+    width: auto;
+}
+
+.inbox, .newPost, .myPosts {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 25vh;
+    height: 20vh;
+    padding: 2vh;
+    margin: 2vh;
+    color: black;
+    background-image: radial-gradient(#FFFFFF, #cce9ee );
+    border: 5px solid black;
+    transition: all 0.2s ease-in-out;
+}
+
+.inbox:hover, .newPost:hover, .myPosts:hover {
+    transform: scale(1.1);
+}
+
+a.inbox, a.newPost, a.myPosts {
+    font-size: 3vh;
+    text-decoration: none;
+}
