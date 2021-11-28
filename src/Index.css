@@ -50,9 +50,9 @@ nav a:hover{
 
 @media (max-width:860px) {
   nav a{
-    font-size: 3vh;
+    font-size: 2vw;
   }
   a {
-    font-size: 3vh;
+    font-size: 2vw;
   }
 }

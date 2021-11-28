@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
 import { Routes, Route, NavLink, BrowserRouter as Router } from "react-router-dom"
-import { useEffect } from "react/cjs/react.development";
 import "./Index.css";
 
 import {
@@ -56,8 +55,8 @@ const App = () => {
       <Route path='/newpost' element={ <NewPost token={token} setIsLoggedIn={setIsLoggedIn} isLoggedIn={isLoggedIn} setCurrentUser={setCurrentUser}/> }/>
       <Route path='/posts' element={<Posts token={token} setIsLoggedIn={setIsLoggedIn} isLoggedIn={isLoggedIn} setCurrentUser={setCurrentUser} currentUser={currentUser}/>}/>
       <Route path='/register' element={ <Register setToken={setToken} token={token} setIsLoggedIn={setIsLoggedIn} isLoggedIn={isLoggedIn} setCurrentUser={setCurrentUser}/> }/>
-      <Route path='/sendmessage' element={<SendMessage token={token} setIsLoggedIn={setIsLoggedIn} isLoggedIn={isLoggedIn} setCurrentUser={setCurrentUser}/>}/>
-      <Route path="/logout" element={ <Logout ssetIsLoggedIn={setIsLoggedIn} setCurrentUser={setCurrentUser}/>}/>
+      <Route path='/sendmessage/:post._id' element={<SendMessage token={token} setIsLoggedIn={setIsLoggedIn} isLoggedIn={isLoggedIn} setCurrentUser={setCurrentUser}/>}/>
+      <Route path='/logout' element={ <Logout ssetIsLoggedIn={setIsLoggedIn} setCurrentUser={setCurrentUser}/>}/>
     </Routes>
   </>
 }

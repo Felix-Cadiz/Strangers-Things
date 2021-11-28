@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, useSearchParams } from "react-router-dom"
 import { deletePost } from "../util"
+import { useParams } from "react-router";
 import "./Posts.css"
 
 const baseURL = "https://strangers-things.herokuapp.com"
@@ -18,6 +19,7 @@ const Posts = ({token, currentUser}) => {
             const result = await response.json();
             if (result.error) throw result.error;
             const postResult = result.data.posts
+            console.log(postResult)
             setPosts(postResult)
         } catch (error) {
             console.error("Trouble gathering posts!", error)
@@ -72,8 +74,8 @@ const Posts = ({token, currentUser}) => {
                         {
                             currentUser.username !== post.author.username &&
                                 <div className="sendMessage">
-                                    <Link className="postImage" to="/sendmessage"><img src="images/sendMessage.png" alt="Send Message"/></Link>
-                                    <Link className="postImage" to="/sendmessage">Send Message</Link>
+                                    <Link className="postImage" to={`sendmessage/${post._id}`}><img src="images/sendMessage.png" alt="Send Message"/></Link>
+                                    <Link className="postImage" to={`sendmessage/${post._id}`}>Send Message</Link>
                                 </div>
                         }
                     </div>
